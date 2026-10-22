@@ -1,0 +1,957 @@
+/* ========================================
+   1. GLOBAL STYLES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background-color: #F4F5EC;
+    color: #292F25;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+section {
+    scroll-margin-top: 75px;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ========================================
+   2. NAVIGATION BAR
+======================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    padding: 18px 50px;
+
+    background-color: #FAFBF5;
+    border-bottom: 1px solid #DDE2D2;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid #687653;
+    border-radius: 8px;
+
+    color: #4D5A3B;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    background-color: #687653;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: #292F25;
+    font-size: 16px;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #687653;
+}
+
+
+/* ========================================
+   3. HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 55px;
+
+    padding: 70px 50px;
+
+    background-color: #F4F5EC;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 620px;
+
+    animation: slideInLeft 0.9s ease both;
+}
+
+.intro-label,
+.section-label {
+    color: #687653;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero-content h1 {
+    color: #292F25;
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero-content h1 span,
+.about-content h2 span,
+.skills-heading h2 span,
+.projects-heading h2 span,
+.contact-content h2 span {
+    color: #687653;
+}
+
+.hero-content h2 {
+    color: #4D5A3B;
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 560px;
+
+    color: #5E6455;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.hero-button,
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 24px;
+
+    background-color: #687653;
+    color: #FFFFFF;
+
+    border: 1px solid #687653;
+    border-radius: 6px;
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover,
+.contact-button:hover {
+    background-color: #4D5A3B;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(77, 90, 59, 0.18);
+}
+
+.hero-button span,
+.contact-button span {
+    font-size: 20px;
+}
+
+.hero-image {
+    flex: 0 1 360px;
+    width: 100%;
+    max-width: 360px;
+
+    animation: slideInRight 0.9s ease both;
+}
+
+.hero-image img {
+    display: block;
+
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 5px solid #E6EAD9;
+    border-radius: 12px;
+
+    box-shadow: 12px 12px 0 #D5DCC7;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 16px 16px 0 #D5DCC7;
+}
+
+
+/* ========================================
+   4. ABOUT SECTION
+======================================== */
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+
+    padding: 100px 50px;
+
+    background-color: #E6EAD9;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 650px;
+
+    animation: slideInLeft 0.9s ease both;
+}
+
+.about-content h2 {
+    color: #292F25;
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.about-content p:not(.section-label) {
+    color: #535B4A;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.about-card {
+    flex: 0 1 320px;
+    padding: 35px;
+
+    background-color: #FAFBF5;
+
+    border: 1px solid #D5DCC7;
+    border-left: 5px solid #687653;
+    border-radius: 10px;
+
+    animation: slideInRight 0.9s ease both;
+}
+
+.card-label {
+    color: #687653;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.about-card h3 {
+    color: #292F25;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.about-card ul {
+    list-style: none;
+}
+
+.about-card li {
+    color: #535B4A;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    padding: 13px 0;
+    border-bottom: 1px solid #DDE2D2;
+}
+
+.about-card li:last-child {
+    border-bottom: none;
+}
+
+
+/* ========================================
+   5. TECHNICAL SKILLS
+======================================== */
+
+.skills {
+    padding: 100px 50px;
+    background-color: #F4F5EC;
+}
+
+.skills-heading {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.skills-heading h2 {
+    color: #292F25;
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.skills-heading > p:last-child {
+    color: #5E6455;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+.skill-card {
+    min-width: 0;
+    padding: 30px;
+
+    background-color: #FAFBF5;
+
+    border: 1px solid #DDE2D2;
+    border-top: 4px solid #687653;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: #AAB69A;
+    box-shadow: 0 12px 25px rgba(41, 47, 37, 0.08);
+}
+
+.skill-number {
+    color: #687653;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.skill-card h3 {
+    color: #292F25;
+    font-size: 23px;
+    line-height: 1.4;
+    margin: 15px 0 10px;
+}
+
+.skill-card p {
+    color: #5E6455;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   6. PROJECTS SECTION
+======================================== */
+
+.projects {
+    padding: 100px 50px;
+    background-color: #E6EAD9;
+}
+
+.projects-heading {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.projects-heading h2 {
+    color: #292F25;
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.projects-heading > p:last-child {
+    color: #5E6455;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+    padding: 30px;
+
+    background-color: #FAFBF5;
+    border: 1px solid #DDE2D2;
+    border-top: 4px solid #687653;
+    border-radius: 10px;
+
+    animation: fadeUp 0.7s ease both;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: #AAB69A;
+    box-shadow: 0 12px 25px rgba(41, 47, 37, 0.10);
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+.project-number {
+    color: #687653;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.project-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 42px;
+    height: 42px;
+    padding: 5px 10px;
+
+    background-color: #E6EAD9;
+    color: #4D5A3B;
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.project-card h3 {
+    color: #292F25;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.project-card > p {
+    color: #5E6455;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.project-tags span {
+    padding: 6px 11px;
+
+    background-color: #E6EAD9;
+    color: #4D5A3B;
+    border-radius: 5px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: auto;
+    padding-top: 12px;
+
+    color: #4D5A3B;
+    border-top: 1px solid #DDE2D2;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #687653;
+}
+
+.project-link span {
+    font-size: 19px;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover span {
+    transform: translateX(5px);
+}
+
+/* Explore all repositories button */
+
+.all-projects {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.all-projects-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 24px;
+
+    background-color: #687653;
+    color: #FAFBF5;
+
+    border: 1px solid #687653;
+    border-radius: 7px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.all-projects-button:hover {
+    background-color: #4D5A3B;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(41, 47, 37, 0.15);
+}
+
+
+/* ========================================
+   7. CONTACT SECTION
+======================================== */
+
+.contact {
+    padding: 100px 50px;
+    background-color: #F4F5EC;
+}
+
+.contact-content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+
+    animation: fadeUp 0.8s ease both;
+}
+
+.contact-content h2 {
+    color: #292F25;
+    font-size: 40px;
+    line-height: 1.35;
+    margin-bottom: 18px;
+}
+
+.contact-content > p:not(.section-label) {
+    color: #5E6455;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 28px;
+}
+
+.social-links a {
+    color: #4D5A3B;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #687653;
+}
+
+
+/* ========================================
+   8. FOOTER
+======================================== */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    padding: 25px 50px;
+
+    background-color: #FAFBF5;
+    border-top: 1px solid #DDE2D2;
+
+    color: #5E6455;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #4D5A3B;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #687653;
+}
+
+
+/* ========================================
+   9. ANIMATIONS
+======================================== */
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   10. TABLET RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 18px 30px;
+    }
+
+    .navbar nav {
+        gap: 18px;
+    }
+
+    .hero,
+    .about {
+        gap: 35px;
+        padding: 70px 30px;
+    }
+
+    .hero-image {
+        flex-basis: 300px;
+        max-width: 300px;
+    }
+
+    .hero-image img {
+        height: 400px;
+    }
+
+    .about-card {
+        flex-basis: 280px;
+        padding: 28px;
+    }
+
+    .skills,
+    .projects,
+    .contact {
+        padding: 80px 30px;
+    }
+
+    .projects-container {
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 25px;
+    }
+
+    .footer {
+        padding: 25px 30px;
+    }
+}
+
+
+/* ========================================
+   11. MOBILE RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 600px) {
+    /* Navigation */
+
+    .navbar {
+        padding: 16px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .navbar nav {
+        width: 100%;
+        gap: 12px 18px;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 55px 22px 65px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content h2 {
+        font-size: 19px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 90%;
+        max-width: 360px;
+        align-self: center;
+    }
+
+    .hero-image img {
+        height: 400px;
+    }
+
+    /* About */
+
+    .about {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 65px 22px;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+    .about-content p:not(.section-label) {
+        font-size: 16px;
+    }
+
+    .about-card {
+        flex: auto;
+        width: 100%;
+        padding: 26px;
+    }
+
+    /* Skills */
+
+    .skills {
+        padding: 65px 22px;
+    }
+
+    .skills-heading {
+        margin-bottom: 30px;
+    }
+
+    .skills-heading h2 {
+        font-size: 34px;
+    }
+
+    .skills-heading > p:last-child {
+        font-size: 16px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .skill-card {
+        padding: 25px;
+    }
+
+    .skill-card h3 {
+        font-size: 21px;
+    }
+
+    /* Projects */
+
+    .projects {
+        padding: 65px 22px;
+    }
+
+    .projects-heading {
+        margin-bottom: 30px;
+    }
+
+    .projects-heading h2 {
+        font-size: 34px;
+    }
+
+    .projects-heading > p:last-child {
+        font-size: 16px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+
+    .project-card h3 {
+        font-size: 21px;
+    }
+
+    .all-projects {
+        margin-top: 28px;
+    }
+
+    .all-projects-button {
+        padding: 11px 17px;
+        font-size: 14px;
+    }
+
+    /* Contact */
+
+    .contact {
+        padding: 65px 22px;
+    }
+
+    .contact-content h2 {
+        font-size: 32px;
+    }
+
+    /* Footer */
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+}
+
+
+/* ========================================
+   12. ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
